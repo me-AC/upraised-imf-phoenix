@@ -26,11 +26,7 @@ A secure API for managing IMF's gadget inventory. This API provides endpoints fo
 
 3. Create a PostgreSQL database named 'imf_gadgets'
 
-4. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Update the database credentials in `.env`
-
-5. Start the server:
+4. Start the server:
    ```bash
    npm run dev
    ```
@@ -39,10 +35,10 @@ A secure API for managing IMF's gadget inventory. This API provides endpoints fo
 
 ### Gadgets
 
-- `GET /gadgets` - Get all gadgets with mission success probabilities
+- `GET /gadgets?status={status}` - Get all gadgets with mission success probabilities. Optional query to filter gadgets by their status.
 - `POST /gadgets` - Add a new gadget
   - Body: `{ "name": "Gadget Name" }`
-- `PATCH /gadgets/:id` - Update a gadget
+- `PATCH /gadgets/:id` - Update a gadget. Atleast one of the "name" and "status" is required.
   - Body: `{ "name": "New Name", "status": "Available" }`
 - `DELETE /gadgets/:id` - Decommission a gadget
 
