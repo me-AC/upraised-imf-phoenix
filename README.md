@@ -2,6 +2,10 @@
 
 A secure API for managing IMF's gadget inventory. This API provides endpoints for creating, reading, updating, and decommissioning gadgets, as well as initiating self-destruct sequences. The API is deployed on Render.com for reliable cloud hosting, with the PostgreSQL database running on AWS RDS for robust data persistence and high availability.
 
+## Postman Collection
+
+[Postman Documentation](https://www.postman.com/imf-phoenix-team/workspace/imf-phoenix-team-workspace/collection/40658875-1991cb62-f48c-415d-8c99-e6283636ce26?action=share&creator=40658875)
+
 ## Features
 
 - Secure JWT Authentication
@@ -29,8 +33,7 @@ A secure API for managing IMF's gadget inventory. This API provides endpoints fo
 3. Create a PostgreSQL database named 'imf_gadgets'
 
 4. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Update with your database credentials and JWT secret
+   - Create a .env with your database credentials and JWT secret
 
 5. Start the server:
    ```bash
