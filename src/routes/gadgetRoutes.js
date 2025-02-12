@@ -7,12 +7,18 @@ const {
 	deleteGadget,
 	selfDestruct,
 } = require('../controllers/gadgetController');
+const { authenticateToken, isAdmin } = require('../middleware/auth');
 
+// Apply authentication to all routes
+router.use(authenticateToken);
+
+// Routes accessible to all authenticated users
 router.get('/', getAllGadgets);
-router.post('/', createGadget);
-router.patch('/:id', updateGadget);
-router.delete('/:id', deleteGadget);
 
-router.post('/:id/self-destruct', selfDestruct);
+// Routes requiring admin access
+router.post('/', isAdmin, createGadget);
+router.patch('/:id', isAdmin, updateGadget);
+router.delete('/:id', isAdmin, deleteGadget);
+router.post('/:id/self-destruct', isAdmin, selfDestruct);
 
 module.exports = router;

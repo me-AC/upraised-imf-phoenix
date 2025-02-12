@@ -6,7 +6,7 @@ const {
 } = require('../utils/gadgetUtils');
 const { validate: uuidValidate } = require('uuid');
 
-// Get all gadgets
+
 const getAllGadgets = async (req, res) => {
 	try {
 		const { status } = req.query;
@@ -29,7 +29,7 @@ const getAllGadgets = async (req, res) => {
 	}
 };
 
-// Add a new gadget
+
 const createGadget = async (req, res) => {
 	try {
 		const { name } = req.body;
@@ -47,7 +47,7 @@ const createGadget = async (req, res) => {
 	}
 };
 
-// Update a gadget
+
 const updateGadget = async (req, res) => {
 	try {
 		const { id } = req.params;
@@ -88,7 +88,7 @@ const updateGadget = async (req, res) => {
 	}
 };
 
-// Delete (decommission) a gadget
+
 const deleteGadget = async (req, res) => {
 	try {
 		const { id } = req.params;
@@ -117,7 +117,7 @@ const deleteGadget = async (req, res) => {
 	}
 };
 
-// Trigger self-destruct
+
 const selfDestruct = async (req, res) => {
 	try {
 		const { id } = req.params;

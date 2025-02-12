@@ -2,12 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const sequelize = require('./config/database');
 const gadgetRoutes = require('./routes/gadgetRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Auth routes (unprotected)
+app.use('/auth', authRoutes);
+// Gadget routes (protected)
 app.use('/gadgets', gadgetRoutes);
 
 sequelize
